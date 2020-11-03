@@ -1,0 +1,18 @@
+server:
+  port: 8089
+
+person:
+  name: zhangsan
+  sex: 男
+  age: 18
+  isMarried: false
+#  friend:
+#    name:李四
+#    sex:男
+  friend: {name: 李四,sex: 男}
+  pets:
+    - 小狗
+    - 小猫
+    - 小妒
+#  pets:[小猫,小狗,小驴]
+  friends: [{name: 王五,sex: 男},{name: 小七,sex: 女}]
