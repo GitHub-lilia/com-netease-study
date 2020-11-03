@@ -6,49 +6,52 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {
-            $("button:contains('查询')").click(function () {
-                var id = $(this).prev().val();
-                if(id==null||id==""){
-                    $.ajax({
-                        type: "GET",
-                        url: "users",
-                        data: "",
-                        dataType: "text",
-                        success: function(msg){
-                            alert(msg);
-                        }
-                    });
-                }else{
-                    $.ajax({
-                        type: "GET",
-                        url: "users/"+id,
-                        data: "",
-                        dataType: "text",
-                        success: function(msg){
-                            alert(msg);
-                        }
-                    });
-                }
-            });
+            // 查询
+           $("button:contains('查询')").click(function () {
+              var id=$(this).prev().val();
+              if(null == id || "" == id){
+                  $.ajax({
+                    type:"GET",
+                    url:"users",
+                    data:"",
+                    dataType:"text",
+                      success:function (msg) {
+                          alert(msg);
+                      }
+                  });
+              }else{
+                  $.ajax({
+                      type:"GET",
+                      url:"users/"+id,
+                      data:"",
+                      dataType:"text",
+                      success:function (msg) {
+                          alert(msg);
+                      }
+                  })
+              }
+           });
+
+            // 添加
             $("button:contains('添加/修改用户-POST')").click(function () {
                 var id = $('#uid').val();
-                if(id==null||id==""){
+                if(id == null || id == ""){
                     $.ajax({
-                        type: "POST",
-                        url: "users",
-                        data: {username:$('#username').val(),password:$('#password').val(),name:$('#name').val()},
-                        dataType: "text",
-                        success: function(msg){
+                       type:"POST",
+                       url:"users",
+                        data:{username:$('#username').val(),password:$('#password').val(),name:$('#name').val()},
+                        dataType:"text",
+                        success:function (msg) {
                             alert(msg);
                         }
                     });
                 }else{
                     $.ajax({
-                        type: "POST",
-                        url: "users",
-                        data: {id:id,username:$('#username').val(),password:$('#password').val(),name:$('#name').val()},
-                        dataType: "text",
-                        success: function(msg){
+                       type:"POST",
+                        url:"users",
+                        data:{id:id,username:$('#username').val(),password:$('#password').val(),name:$('#name').val()},
+                        dataType:"text",
+                        success:function (msg) {
                             alert(msg);
                         }
                     });
@@ -92,7 +95,8 @@
                     });
                 }
             });
-        })
+
+        });
     </script>
 </head>
 <body>
