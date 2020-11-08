@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.study.springboot.mybatis.repository.UsersDao">
+    <select id="findAll" resultType="Users">
+        select * from users;
+    </select>
+    <select id="findById" resultType="Users" parameterType="Integer">
+        select * from users where id=#{id};
+    </select>
+</mapper>
